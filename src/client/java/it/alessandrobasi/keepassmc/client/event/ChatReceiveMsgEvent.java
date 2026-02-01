@@ -20,6 +20,7 @@ public class ChatReceiveMsgEvent implements ClientReceiveMessageEvents.Game {
     @Override
     public void onReceiveGameMessage(Text message, boolean overlay) {
 
+
         if(!ServerJoinEvent.isNewlyjoined()) return;
 
 
