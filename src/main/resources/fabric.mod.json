@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "keepassmc",
+  "version": "${version}",
+  "name": "KeePassMC",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/keepassmc/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "it.alessandrobasi.keepassmc.client.KeepassmcDataGenerator"
+    ],
+    "client": [
+      "it.alessandrobasi.keepassmc.client.KeepassmcClient"
+    ],
+    "main": [
+      "it.alessandrobasi.keepassmc.Keepassmc"
+    ],
+    "modmenu": [
+      "it.alessandrobasi.keepassmc.client.config.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "keepassmc.mixins.json",
+    {
+      "config": "keepassmc.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "yet_another_config_lib_v3": "${yacl_version}",
+    "modmenu": "${modmenu_version}"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+      },
+      "badges": [],
+      "update_checker": false
+    }
+  }
+}
