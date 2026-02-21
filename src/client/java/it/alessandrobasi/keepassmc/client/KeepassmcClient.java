@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
+import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +27,6 @@ public class KeepassmcClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         instance = this;
-
         ClientLifecycleEvents.CLIENT_STOPPING.register(new ClientClosingEvent());
         ScreenEvents.AFTER_INIT.register(new AfterInitScreenEvents());
         ClientPlayConnectionEvents.JOIN.register(new ServerJoinEvent());
